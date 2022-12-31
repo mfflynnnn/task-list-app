@@ -19,11 +19,6 @@ function newItem() {
 
   li.on("dblclick", crossOut);
 
-  //   //3(i). Adding the delete button "X":
-  //   let crossOutButton = document.createElement("crossOutButton");
-  //   crossOutButton.appendChild(document.createTextNode("X"));
-  //   li.appendChild(crossOutButton);
-
   //3(i). Adding the delete button "X":
   let crossOutButton = $(document.createElement("crossOutButton"));
   crossOutButton.append(document.createTextNode("X"));
@@ -34,6 +29,13 @@ function newItem() {
   //   function deleteListItem() {
   //     li.classList.add("delete");
   //   }
+
+  //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+  function deleteListItem() {
+    li.addClass("delete");
+  }
+
+  crossOutButton.on("click", deleteListItem);
 
   //   // 4. Reordering the items:
   //   $("#list").sortable();
